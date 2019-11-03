@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/colorBackground"
+    >
+
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:textSize="30sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <TextView
+        android:id="@+id/textViewAuthor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/author"
+        android:textColor="@color/colorBlack"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewCurso"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/textViewCurso"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/curso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewAuthor"
+        android:textColor="@color/colorBlack"
+        android:textSize="15sp"
+        />
+
+    <fragment
+        android:id="@+id/fragmentList"
+        android:name="es.alejandra.findyourdream.FragmentList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAuthor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
