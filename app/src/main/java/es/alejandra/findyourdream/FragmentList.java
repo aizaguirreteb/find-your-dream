@@ -27,7 +27,7 @@ public class FragmentList extends ListFragment {
         setListAdapter(new Adaptador(getActivity(), R.layout.layout_listado, Contenido.ENT_LISTA) {
 
             @Override
-            public void onEntrada(Object entrada, View view) {
+            public void onEntrada(final Object entrada, View view) {
                 final TextView textoTitulo = (TextView) view.findViewById(R.id.textoTitulo);
                 textoTitulo.setText(((Contenido.Lista_entrada) entrada).titulo);
                 textoTitulo.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +44,7 @@ public class FragmentList extends ListFragment {
                     public void onClick(View v) {
                         Toast.makeText(v.getContext(), "Wow! It's crazy!", Toast.LENGTH_SHORT).show();
                         Intent intentDetail = new Intent(v.getContext(), Fragment2.class);
+                        intentDetail.putExtra(FragmentDetail.ARG_ID_ENTRADA_SELECCIONADA, ((Contenido.Lista_entrada) entrada).id);
                         startActivity(intentDetail);
 
                     }
