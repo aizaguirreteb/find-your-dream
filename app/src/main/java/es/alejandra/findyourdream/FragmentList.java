@@ -2,6 +2,7 @@ package es.alejandra.findyourdream;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -42,6 +43,8 @@ public class FragmentList extends ListFragment {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(v.getContext(), "Wow! It's crazy!", Toast.LENGTH_SHORT).show();
+                        Intent intentDetail = new Intent(v.getContext(), Fragment2.class);
+                        startActivity(intentDetail);
 
                     }
                 });
