@@ -37,24 +37,25 @@ public class FragmentList extends ListFragment {
 
                     }
                 });
-                TextView texto = (TextView) view.findViewById(R.id.texto);
+                /*TextView texto = (TextView) view.findViewById(R.id.texto);
                 texto.setText(((Contenido.Lista_entrada) entrada).texto);
                 texto.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "Wow! It's crazy!", Toast.LENGTH_SHORT).show();
-                        Intent intentDetail = new Intent(v.getContext(), Fragment2.class);
-                        intentDetail.putExtra(FragmentDetail.ARG_ID_ENTRADA_SELECCIONADA, ((Contenido.Lista_entrada) entrada).id);
-                        startActivity(intentDetail);
+
 
                     }
-                });
+                });*/
                 ImageView imagen = (ImageView) view.findViewById(R.id.imagenLista);
                 imagen.setImageResource(((Contenido.Lista_entrada) entrada).idImagen);
                 imagen.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), textoTitulo.getText(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(v.getContext(), textoTitulo.getText(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(v.getContext(), "Wow! It's crazy!", Toast.LENGTH_SHORT).show();
+                        Intent intentDetail = new Intent(v.getContext(), Fragment2.class);
+                        intentDetail.putExtra(FragmentDetail.ARG_ID_ENTRADA_SELECCIONADA, ((Contenido.Lista_entrada) entrada).id);
+                        startActivity(intentDetail);
 
                     }
                 });
