@@ -37,15 +37,7 @@ public class FragmentList extends ListFragment {
 
                     }
                 });
-                /*TextView texto = (TextView) view.findViewById(R.id.texto);
-                texto.setText(((Contenido.Lista_entrada) entrada).texto);
-                texto.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
 
-
-                    }
-                });*/
                 ImageView imagen = (ImageView) view.findViewById(R.id.imagenLista);
                 imagen.setImageResource(((Contenido.Lista_entrada) entrada).idImagen);
                 imagen.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +57,7 @@ public class FragmentList extends ListFragment {
                 haveDream.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        if(isChecked)
                         Toast.makeText(buttonView.getContext(), "That's scary!", Toast.LENGTH_SHORT).show();
 
                     }
@@ -75,6 +68,7 @@ public class FragmentList extends ListFragment {
                 likeIt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        if(isChecked)
                         Toast.makeText(buttonView.getContext(), "Do you really?", Toast.LENGTH_SHORT).show();
                     }
                 });

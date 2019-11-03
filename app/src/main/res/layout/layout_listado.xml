@@ -23,13 +23,7 @@
         android:textStyle="bold"
         android:gravity="center"
         android:textColor="@color/colorPrimaryDark"/>
-        <!--<TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/texto"
-            android:textSize="10sp"
-            android:gravity="center"
-            android:textColor="@color/colorBlack"/>-->
+
 
         <LinearLayout
             android:layout_width="wrap_content"
