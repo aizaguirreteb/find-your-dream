@@ -32,7 +32,7 @@ public class FragmentList extends ListFragment {
     };
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Activity context) {
         super.onAttach(context);
         mCallbacks = (Callbacks) context;
     }
@@ -43,8 +43,11 @@ public class FragmentList extends ListFragment {
         mCallbacks = CallbackVacios;
     }
 
+
+
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
+        //super.onListItemClick(l, v, position, id);
         mCallbacks.onEntradaSeleccionada(Contenido.ENT_LISTA.get(position).id);
     }
 
@@ -57,29 +60,29 @@ public class FragmentList extends ListFragment {
             public void onEntrada(final Object entrada, View view) {
                 final TextView textoTitulo = (TextView) view.findViewById(R.id.textoTitulo);
                 textoTitulo.setText(((Contenido.Lista_entrada) entrada).titulo);
-                textoTitulo.setOnClickListener(new View.OnClickListener() {
+                /*textoTitulo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(v.getContext(), textoTitulo.getText(), Toast.LENGTH_SHORT).show();
 
                     }
-                });
+                });*/
 
                 ImageView imagen = (ImageView) view.findViewById(R.id.imagenLista);
                 imagen.setImageResource(((Contenido.Lista_entrada) entrada).idImagen);
-                imagen.setOnClickListener(new View.OnClickListener() {
+                /*imagen.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         //Toast.makeText(v.getContext(), textoTitulo.getText(), Toast.LENGTH_LONG).show();
                         Toast.makeText(v.getContext(), "Wow! It's crazy!", Toast.LENGTH_SHORT).show();
-                        Intent intentDetail = new Intent(v.getContext(), Fragment2.class);
+                        *//*Intent intentDetail = new Intent(v.getContext(), Fragment2.class);
                         intentDetail.putExtra(FragmentDetail.ARG_ID_ENTRADA_SELECCIONADA, ((Contenido.Lista_entrada) entrada).id);
-                        startActivity(intentDetail);
+                        startActivity(intentDetail);*//*
 
                     }
                 });
-
-                CheckBox haveDream = (CheckBox) view.findViewById(R.id.checkboxHave);
+*/
+                /*CheckBox haveDream = (CheckBox) view.findViewById(R.id.checkboxHave);
                 haveDream.setChecked(((Contenido.Lista_entrada) entrada).haveDream);
                 haveDream.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
@@ -98,7 +101,7 @@ public class FragmentList extends ListFragment {
                         if(isChecked)
                         Toast.makeText(buttonView.getContext(), "Do you really?", Toast.LENGTH_SHORT).show();
                     }
-                });
+                });*/
 
 
 

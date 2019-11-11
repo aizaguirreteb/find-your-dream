@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,7 +27,9 @@ public class activityListOfDreams extends FragmentActivity implements FragmentLi
             dosFragmentos = true;
         }
 
-        final TextView author = findViewById(R.id.textViewAuthor);
+        Log.i("MEDIDA", String.valueOf(dosFragmentos));
+
+        /*final TextView author = findViewById(R.id.textViewAuthor);
         author.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,7 +43,7 @@ public class activityListOfDreams extends FragmentActivity implements FragmentLi
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), year.getText(), Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
     }
 
 
@@ -48,7 +51,8 @@ public class activityListOfDreams extends FragmentActivity implements FragmentLi
     public void onEntradaSeleccionada(String id) {
 
         if(dosFragmentos){
-
+            Log.i("ID", id);
+            Toast.makeText(getBaseContext(), "TOCADO EL " + id, Toast.LENGTH_SHORT).show();
             Bundle argumentos = new Bundle();
             argumentos.putString(FragmentDetail.ARG_ID_ENTRADA_SELECCIONADA, id);
             FragmentDetail fragment = new FragmentDetail();
