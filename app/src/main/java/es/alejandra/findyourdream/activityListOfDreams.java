@@ -1,6 +1,7 @@
 package es.alejandra.findyourdream;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class activityListOfDreams extends AppCompatActivity {
+public class activityListOfDreams extends FragmentActivity implements FragmentList.Callbacks{
 
     private boolean dosFragmentos;
 
@@ -43,6 +44,11 @@ public class activityListOfDreams extends AppCompatActivity {
     }
 
 
-
-
+    @Override
+    public void onEntradaSeleccionada(String id) {
+        Toast.makeText(getBaseContext(), "TOCADO EL " + id, Toast.LENGTH_SHORT).show();
+        Intent detalleIntent = new Intent(this, Fragment2.class);
+        detalleIntent.putExtra(FragmentDetail.ARG_ID_ENTRADA_SELECCIONADA, id);
+        startActivity(detalleIntent);
+    }
 }

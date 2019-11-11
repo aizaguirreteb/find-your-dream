@@ -19,7 +19,34 @@ import androidx.fragment.app.ListFragment;
 
 public class FragmentList extends ListFragment {
 
+    private Callbacks mCallbacks;
 
+
+    public FragmentList(){}
+
+    private static Callbacks CallbackVacios = new Callbacks() {
+        @Override
+        public void onEntradaSeleccionada(String id) {
+
+        }
+    };
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mCallbacks = (Callbacks) context;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mCallbacks = CallbackVacios;
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        mCallbacks.onEntradaSeleccionada(Contenido.ENT_LISTA.get(position).id);
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,8 +101,15 @@ public class FragmentList extends ListFragment {
                 });
 
 
+
             }
         });
+    }
+
+
+
+    public interface Callbacks{
+        public void onEntradaSeleccionada(String id);
     }
 
 
