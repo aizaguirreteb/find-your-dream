@@ -30,7 +30,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         android:src="@android:drawable/ic_menu_gallery"
         app:layout_constraintBottom_toTopOf="@+id/textoDetalle"
         app:layout_constraintEnd_toEndOf="parent"

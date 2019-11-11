@@ -51,7 +51,7 @@
         android:layout_weight="1.5"
         android:id="@+id/imagenLista"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         android:gravity="center"
         android:src="@android:drawable/ic_menu_gallery"/>
 
