@@ -46,9 +46,24 @@ public class activityListOfDreams extends FragmentActivity implements FragmentLi
 
     @Override
     public void onEntradaSeleccionada(String id) {
-        Toast.makeText(getBaseContext(), "TOCADO EL " + id, Toast.LENGTH_SHORT).show();
-        Intent detalleIntent = new Intent(this, Fragment2.class);
-        detalleIntent.putExtra(FragmentDetail.ARG_ID_ENTRADA_SELECCIONADA, id);
-        startActivity(detalleIntent);
+
+        if(dosFragmentos){
+
+            Bundle argumentos = new Bundle();
+            argumentos.putString(FragmentDetail.ARG_ID_ENTRADA_SELECCIONADA, id);
+            FragmentDetail fragment = new FragmentDetail();
+            fragment.setArguments(argumentos);
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frame_contenedor, fragment)
+                    .commit();
+
+        } else {
+            Toast.makeText(getBaseContext(), "TOCADO EL " + id, Toast.LENGTH_SHORT).show();
+            Intent detalleIntent = new Intent(this, Fragment2.class);
+            detalleIntent.putExtra(FragmentDetail.ARG_ID_ENTRADA_SELECCIONADA, id);
+            startActivity(detalleIntent);
+        }
+
     }
 }
